@@ -22,15 +22,13 @@
         // Open the Chooser dialog
         Dropbox.choose({
             success: function (files) {
-                // Handle the selected files
-                console.log(files);
-            }
-            var button = Dropbox.createChooseButton({success: function(files){
                 if (files[0].name.endsWith('.csv')) {
                     document.getElementById('upload-btn').click();
                 }else{
                     alert('Please Upload a CSV file.');
-                },
+                // Handle the selected files
+                console.log(files);
+            }
             cancel: function () {
             },
             linkType: 'direct',
